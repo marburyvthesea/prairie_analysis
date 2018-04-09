@@ -204,6 +204,8 @@ def output_folder_to_excel(folder_path):
 	
 	import_folder_output['voltage recording'].to_excel(str(folder_path)+'voltage_recording'+'.xlsx')
 	
+	pd.DataFrame(import_folder_output['file attributes']).to_excel(str(folder_path)+'file_attributes'+'.xlsx')
+	
 	if 'linescan' in import_folder_output.keys():
 		import_folder_output['linescan'].to_excel(str(folder_path)+'linescan' + '.xlsx')
 		
