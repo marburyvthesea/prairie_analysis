@@ -195,3 +195,32 @@ def import_folder(folder):
                   "file attributes": None}
 
     return output
+    
+def output_folder_to_excel(folder_path):
+	"""uses import folder to create excel files for linescan data, voltage recording data,
+	and file attributes"""
+	
+	import_folder_output = import_folder(folder_path)
+	
+	import_folder_output['voltage recording'].to_excel(str(folder_path)+'voltage_recording'+'.xlsx')
+	
+	if 'linescan' in import_folder_output.keys():
+		import_folder_output['linescan'].to_excel(str(folder_path)+'linescan' + '.xlsx')
+		
+	return
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
